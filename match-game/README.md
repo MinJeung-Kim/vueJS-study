@@ -19,4 +19,5 @@ index.html 페이지에서 Open With Live Server
 
 <br>
 
-![4bfvTKMMz5](https://user-images.githubusercontent.com/79193369/124850753-2dda1c00-dfdc-11eb-821f-c560be9223d3.gif)
+![uoYTpV4cih](https://user-images.githubusercontent.com/79193369/124852831-db9afa00-dfdf-11eb-81b2-0799d416559b.gif)
+
