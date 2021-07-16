@@ -19,5 +19,11 @@ export default new Router({
       component: () =>
         import(/* webpackChunkName: "list" */ './components/MngList.vue'),
     },
+    {
+      path: '/signUp',
+      name: 'signUp',
+      component: () =>
+        import(/* webpackChunkName: "signUp" */ './components/MngSignUp.vue'),
+    },
   ],
 });

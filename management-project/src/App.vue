@@ -16,10 +16,18 @@
           </v-list-item>
           <v-list-item router :to="{name: 'list'}">
             <v-list-item-action>
-              <v-icon>mdi-login</v-icon>
+              <v-icon>mdi-account</v-icon>
             </v-list-item-action>
             <v-list-item-content>
               <v-list-item-title>회원관리</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item router :to="{name: 'signUp'}">
+            <v-list-item-action>
+              <v-icon>mdi-account</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>회원가입</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </v-list>

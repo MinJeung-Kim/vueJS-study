@@ -15,13 +15,25 @@
       :headers="$store.state.headers"
       :items="$store.state.desserts"
       :search="$store.state.search"
+      @click="popUpOpen = true"
     >  
     </v-data-table>
+    <MngPopUp v-if="popUpOpen === true"/>
   </v-card>
 </template>
 
 <script>
+import MngPopUp from './MngPopUp.vue'
+
   export default {
-    
+    name: 'MngList',
+    data(){
+      return{
+        popUpOpen : false
+      }
+    },
+    components:{
+      MngPopUp
+    }
   }
 </script> 
