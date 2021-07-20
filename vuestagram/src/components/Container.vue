@@ -1,12 +1,7 @@
 <template>
   <div>
     <div v-if="step === 0">
-      <Post
-        :pickFliter="pickFliter"
-        :feed="feed[index]"
-        v-for="(list, index) in feed"
-        :key="index"
-      />
+      <Post :feed="feed[index]" v-for="(list, index) in feed" :key="index" />
     </div>
 
     <!-- 필터선택페이지 -->
@@ -44,6 +39,10 @@
         </textarea>
       </div>
     </div>
+
+    <div v-if="step === 3">
+      <MyPage />
+    </div>
   </div>
 </template>
 
@@ -51,23 +50,31 @@
 import Post from "./Post.vue";
 import FilterBox from "./FilterBox.vue";
 import filterData from "../assets/filterData";
+import MyPage from "./MyPage.vue";
 
 export default {
   name: "Container",
   data() {
     return {
       filterData: filterData,
+      pickFliter: "",
     };
   },
   components: {
     Post,
     FilterBox,
+    MyPage,
   },
   props: {
     feed: Array,
     step: Number,
     imageUrl: String,
-    pickFliter: String,
+  },
+  mounted() {
+    // FilterBox.vue 자식 컴포넌트에서 보낸 이벤트 수신.
+    this.emitter.on("selectFilter", (data) => {
+      this.pickFliter = data;
+    });
   },
 };
 </script>

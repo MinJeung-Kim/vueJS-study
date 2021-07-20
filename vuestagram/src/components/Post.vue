@@ -15,7 +15,9 @@
       :style="{ backgroundImage: `url(${feed.postImage})` }"
     ></div>
     <div class="post-content">
-      <p>{{ feed.likes }} Likes</p>
+      <p @click="$store.commit('addLike')">
+        {{ feed.likes + $store.state.likes }} Likes
+      </p>
       <p>
         <strong>{{ feed.filter }}</strong> {{ feed.content }}
       </p>

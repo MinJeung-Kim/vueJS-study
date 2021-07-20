@@ -10,13 +10,15 @@
     <img src="./assets/logo.png" class="logo" />
   </div>
 
+  <p>{{ $store.state.more }}</p>
+  <button @click="$store.dispatch('getData')">더보기 버튼</button>
+
   <!-- 게시물 content -->
   <Container
     :feed="feed"
     :step="step"
     :imageUrl="imageUrl"
     @setText="myContent = $event"
-    :pickFliter="pickFliter"
   />
   <button @click="more">더보기</button>
 
@@ -46,7 +48,7 @@ export default {
     return {
       feed: data, // 게시물
       clickBtn: 0, // 더보기 클릭 수
-      step: 0,
+      step: 3,
       imageUrl: "",
       myContent: "",
       pickFliter: "",

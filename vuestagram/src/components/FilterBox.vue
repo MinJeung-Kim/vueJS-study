@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     fire() {
-      //App.vue 조상 컴포넌트로 전송
+      //App.vue 조상, Container.vue 부모 컴포넌트로 전송
       this.emitter.emit("selectFilter", this.filter);
     },
   },
